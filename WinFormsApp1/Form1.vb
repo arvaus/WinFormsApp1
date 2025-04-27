@@ -1,16 +1,30 @@
 ﻿Imports Microsoft.Data.SqlClient
 Imports System.IO
 Imports System.Data
+
 Public Class Form1
-    Dim connectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Austi\OneDrive\Desktop\BeeHeaven\app\WinFormsApp1\WinFormsApp1\HiveInspections.mdf;Integrated Security=True"
+    ' Connection string to the SQL Server instance on Austins-Laptop
+
+    Dim connectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Austi\OneDrive\Documents\ProgramData.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"
+
+
+
+
+
+
     Dim imagePath As String = ""
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadInspections()
+        ' Ensure the application folder exists if needed
+        ' Make sure BeeAppData folder exists
+        ' Commented out as it's not required if using SQL Server instead of LocalDB
+        ' If Not Directory.Exists(dbFolder) Then
+        '    Directory.CreateDirectory(dbFolder)
+        ' End If
+        Me.WindowState = FormWindowState.Maximized
+
         LoadHiveNumbers()
     End Sub
-
-
 
     Private Sub btnUploadPhoto_Click(sender As Object, e As EventArgs) Handles btnUploadPhoto.Click
         Dim ofd As New OpenFileDialog
@@ -22,6 +36,11 @@ Public Class Form1
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        If txtHiveNumber.SelectedIndex = -1 Then
+            MessageBox.Show("Please select a hive number!")
+            Exit Sub
+        End If
+
         Using conn As New SqlConnection(connectionString)
             conn.Open()
 
@@ -64,13 +83,13 @@ Public Class Form1
             Dim query As String = "SELECT * FROM Inspections ORDER BY InspectionDate DESC"
             Dim adapter As New SqlDataAdapter(query, conn)
             Dim table As New DataTable()
-            adapter.Fill(table)
+            adapter.Fill(dataTable:=table)
             dgvRecords.DataSource = table
         End Using
     End Sub
 
     Private Sub ClearForm()
-        txtHiveNumber.Clear()
+        txtHiveNumber.SelectedIndex = -1
         txtHiveCondition.Clear()
         txtBroodPattern.Clear()
         chkSwarming.Checked = False
@@ -108,18 +127,28 @@ Public Class Form1
     End Sub
 
     Private Sub LoadHiveNumbers()
+        cmbHiveFilter.Items.Clear()
+        txtHiveNumber.Items.Clear()
+        MessageBox.Show("Connection string: " & connectionString)
+
         Using conn As New SqlConnection(connectionString)
             conn.Open()
-            Dim cmd As New SqlCommand("SELECT DISTINCT HiveNumber FROM Inspections", conn)
+            Dim cmd As New SqlCommand("SELECT ApiaryName, NumberOfHives FROM Apiaries", conn)
             Dim reader As SqlDataReader = cmd.ExecuteReader()
             While reader.Read()
-                cmbHiveFilter.Items.Add(reader("HiveNumber").ToString())
+                Dim apiaryName As String = reader("ApiaryName").ToString()
+                Dim hives As Integer = Convert.ToInt32(reader("NumberOfHives"))
+
+                For i As Integer = 1 To hives
+                    Dim hiveName As String = $"{apiaryName} - Hive {i}"
+                    cmbHiveFilter.Items.Add(hiveName)
+                    txtHiveNumber.Items.Add(hiveName)
+                Next
             End While
         End Using
     End Sub
 
     Private Sub btnOpenWeather_Click(sender As Object, e As EventArgs) Handles btnOpenWeather.Click
-        ' Create an instance of FormWeather and show it
         Dim weatherForm As New FormWeather()
         weatherForm.Show()
     End Sub
@@ -132,11 +161,10 @@ Public Class Form1
             Return
         End If
 
-        ' Query the database to search for content that matches the search term
         Dim query As String = "SELECT Title, Content FROM WikiEntries WHERE Content LIKE @searchTerm"
         Using conn As New SqlConnection(connectionString)
             Dim cmd As New SqlCommand(query, conn)
-            cmd.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%") ' % adds wildcards for partial matches
+            cmd.Parameters.AddWithValue("@searchTerm", "%" & searchTerm & "%")
             conn.Open()
 
             Dim reader As SqlDataReader = cmd.ExecuteReader()
@@ -148,6 +176,13 @@ Public Class Form1
             End If
         End Using
     End Sub
+
+    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
+        Dim settingsForm As New FormSettings()
+        settingsForm.ShowDialog()
+    End Sub
+
+    Private Sub cmbHiveFilter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbHiveFilter.SelectedIndexChanged
+        ' Nothing needed here (for now)
+    End Sub
 End Class
-
-

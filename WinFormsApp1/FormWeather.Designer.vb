@@ -27,15 +27,13 @@ Partial Class FormWeather
         lblTemperature = New Label()
         lblWeatherInfo = New Label()
         lblLongitude = New Label()
-        txtLatitude = New TextBox()
-        txtLongitude = New TextBox()
-        btnFetchWeather = New Button()
         btnClose = New Button()
         txtWeatherDetails = New RichTextBox()
         progressBar = New ProgressBar()
         picWeather = New PictureBox()
         lblWeather = New Label()
         Label1 = New Label()
+        cmbApiarySelection = New ComboBox()
         CType(picWeather, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -83,31 +81,6 @@ Partial Class FormWeather
         lblLongitude.Size = New Size(76, 20)
         lblLongitude.TabIndex = 7
         lblLongitude.Text = "Longitude"
-        ' 
-        ' txtLatitude
-        ' 
-        txtLatitude.Location = New Point(663, 88)
-        txtLatitude.Name = "txtLatitude"
-        txtLatitude.PlaceholderText = "Enter Latitude"
-        txtLatitude.Size = New Size(125, 27)
-        txtLatitude.TabIndex = 8
-        ' 
-        ' txtLongitude
-        ' 
-        txtLongitude.Location = New Point(663, 123)
-        txtLongitude.Name = "txtLongitude"
-        txtLongitude.PlaceholderText = "Enter Longitude"
-        txtLongitude.Size = New Size(125, 27)
-        txtLongitude.TabIndex = 9
-        ' 
-        ' btnFetchWeather
-        ' 
-        btnFetchWeather.Location = New Point(663, 168)
-        btnFetchWeather.Name = "btnFetchWeather"
-        btnFetchWeather.Size = New Size(125, 29)
-        btnFetchWeather.TabIndex = 10
-        btnFetchWeather.Text = "Fetch Weather"
-        btnFetchWeather.UseVisualStyleBackColor = True
         ' 
         ' btnClose
         ' 
@@ -160,20 +133,26 @@ Partial Class FormWeather
         Label1.TabIndex = 16
         Label1.Text = "Weather for:"
         ' 
+        ' cmbApiarySelection
+        ' 
+        cmbApiarySelection.FormattingEnabled = True
+        cmbApiarySelection.Location = New Point(416, 32)
+        cmbApiarySelection.Name = "cmbApiarySelection"
+        cmbApiarySelection.Size = New Size(151, 28)
+        cmbApiarySelection.TabIndex = 17
+        ' 
         ' FormWeather
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 692)
+        Controls.Add(cmbApiarySelection)
         Controls.Add(Label1)
         Controls.Add(lblWeather)
         Controls.Add(picWeather)
         Controls.Add(progressBar)
         Controls.Add(txtWeatherDetails)
         Controls.Add(btnClose)
-        Controls.Add(btnFetchWeather)
-        Controls.Add(txtLongitude)
-        Controls.Add(txtLatitude)
         Controls.Add(lblLongitude)
         Controls.Add(lblWeatherInfo)
         Controls.Add(lblTemperature)
@@ -192,13 +171,11 @@ Partial Class FormWeather
     Friend WithEvents lblTemperature As Label
     Friend WithEvents lblWeatherInfo As Label
     Friend WithEvents lblLongitude As Label
-    Friend WithEvents txtLatitude As TextBox
-    Friend WithEvents txtLongitude As TextBox
-    Friend WithEvents btnFetchWeather As Button
     Friend WithEvents btnClose As Button
     Friend WithEvents txtWeatherDetails As RichTextBox
     Friend WithEvents progressBar As ProgressBar
     Friend WithEvents picWeather As PictureBox
     Friend WithEvents lblWeather As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents cmbApiarySelection As ComboBox
 End Class

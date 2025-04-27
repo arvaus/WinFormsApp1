@@ -25,6 +25,8 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         TabControl1 = New TabControl()
         TabPageForm = New TabPage()
+        txtHiveNumber = New ComboBox()
+        btnSettings = New Button()
         btnOpenWeather = New Button()
         txtPests = New TextBox()
         Label14 = New Label()
@@ -56,7 +58,6 @@ Partial Class Form1
         Label4 = New Label()
         txtHiveCondition = New TextBox()
         Label3 = New Label()
-        txtHiveNumber = New TextBox()
         Label2 = New Label()
         Label1 = New Label()
         dtpDate = New DateTimePicker()
@@ -65,10 +66,10 @@ Partial Class Form1
         cmbHiveFilter = New ComboBox()
         dgvRecords = New DataGridView()
         TabPageBeePlants = New TabPage()
-        OpenFileDialog = New OpenFileDialog()
-        txtSearch = New TextBox()
-        btnSearch = New Button()
         txtWikiContent = New RichTextBox()
+        btnSearch = New Button()
+        txtSearch = New TextBox()
+        OpenFileDialog = New OpenFileDialog()
         TabControl1.SuspendLayout()
         TabPageForm.SuspendLayout()
         CType(picPreview, ComponentModel.ISupportInitialize).BeginInit()
@@ -85,13 +86,15 @@ Partial Class Form1
         TabControl1.Location = New Point(1, -5)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(804, 1060)
+        TabControl1.Size = New Size(1059, 1060)
         TabControl1.TabIndex = 0
         ' 
         ' TabPageForm
         ' 
         TabPageForm.BackgroundImage = CType(resources.GetObject("TabPageForm.BackgroundImage"), Image)
         TabPageForm.BackgroundImageLayout = ImageLayout.Stretch
+        TabPageForm.Controls.Add(txtHiveNumber)
+        TabPageForm.Controls.Add(btnSettings)
         TabPageForm.Controls.Add(btnOpenWeather)
         TabPageForm.Controls.Add(txtPests)
         TabPageForm.Controls.Add(Label14)
@@ -123,17 +126,33 @@ Partial Class Form1
         TabPageForm.Controls.Add(Label4)
         TabPageForm.Controls.Add(txtHiveCondition)
         TabPageForm.Controls.Add(Label3)
-        TabPageForm.Controls.Add(txtHiveNumber)
         TabPageForm.Controls.Add(Label2)
         TabPageForm.Controls.Add(Label1)
         TabPageForm.Controls.Add(dtpDate)
         TabPageForm.Location = New Point(4, 29)
         TabPageForm.Name = "TabPageForm"
         TabPageForm.Padding = New Padding(3)
-        TabPageForm.Size = New Size(796, 1027)
+        TabPageForm.Size = New Size(1051, 1027)
         TabPageForm.TabIndex = 0
         TabPageForm.Text = "New Inspection"
         TabPageForm.UseVisualStyleBackColor = True
+        ' 
+        ' txtHiveNumber
+        ' 
+        txtHiveNumber.FormattingEnabled = True
+        txtHiveNumber.Location = New Point(144, 60)
+        txtHiveNumber.Name = "txtHiveNumber"
+        txtHiveNumber.Size = New Size(151, 28)
+        txtHiveNumber.TabIndex = 37
+        ' 
+        ' btnSettings
+        ' 
+        btnSettings.Location = New Point(525, 100)
+        btnSettings.Name = "btnSettings"
+        btnSettings.Size = New Size(101, 29)
+        btnSettings.TabIndex = 36
+        btnSettings.Text = "Settings"
+        btnSettings.UseVisualStyleBackColor = True
         ' 
         ' btnOpenWeather
         ' 
@@ -392,13 +411,6 @@ Partial Class Form1
         Label3.TabIndex = 4
         Label3.Text = "Hive Condition"
         ' 
-        ' txtHiveNumber
-        ' 
-        txtHiveNumber.Location = New Point(144, 65)
-        txtHiveNumber.Name = "txtHiveNumber"
-        txtHiveNumber.Size = New Size(58, 27)
-        txtHiveNumber.TabIndex = 3
-        ' 
         ' Label2
         ' 
         Label2.AutoSize = True
@@ -434,7 +446,7 @@ Partial Class Form1
         TabPageRecords.Location = New Point(4, 29)
         TabPageRecords.Name = "TabPageRecords"
         TabPageRecords.Padding = New Padding(3)
-        TabPageRecords.Size = New Size(796, 1027)
+        TabPageRecords.Size = New Size(1051, 1027)
         TabPageRecords.TabIndex = 1
         TabPageRecords.Text = "Inspection Records"
         TabPageRecords.UseVisualStyleBackColor = True
@@ -475,31 +487,10 @@ Partial Class Form1
         TabPageBeePlants.Controls.Add(txtSearch)
         TabPageBeePlants.Location = New Point(4, 29)
         TabPageBeePlants.Name = "TabPageBeePlants"
-        TabPageBeePlants.Size = New Size(796, 1027)
+        TabPageBeePlants.Size = New Size(1051, 1027)
         TabPageBeePlants.TabIndex = 2
         TabPageBeePlants.Text = "Wiki"
         TabPageBeePlants.UseVisualStyleBackColor = True
-        ' 
-        ' OpenFileDialog
-        ' 
-        OpenFileDialog.FileName = "OpenFileDialog"
-        ' 
-        ' txtSearch
-        ' 
-        txtSearch.Location = New Point(95, 42)
-        txtSearch.Name = "txtSearch"
-        txtSearch.RightToLeft = RightToLeft.No
-        txtSearch.Size = New Size(125, 27)
-        txtSearch.TabIndex = 0
-        ' 
-        ' btnSearch
-        ' 
-        btnSearch.Location = New Point(149, 109)
-        btnSearch.Name = "btnSearch"
-        btnSearch.Size = New Size(94, 29)
-        btnSearch.TabIndex = 1
-        btnSearch.Text = "Search"
-        btnSearch.UseVisualStyleBackColor = True
         ' 
         ' txtWikiContent
         ' 
@@ -510,11 +501,32 @@ Partial Class Form1
         txtWikiContent.TabIndex = 2
         txtWikiContent.Text = ""
         ' 
+        ' btnSearch
+        ' 
+        btnSearch.Location = New Point(149, 109)
+        btnSearch.Name = "btnSearch"
+        btnSearch.Size = New Size(94, 29)
+        btnSearch.TabIndex = 1
+        btnSearch.Text = "Search"
+        btnSearch.UseVisualStyleBackColor = True
+        ' 
+        ' txtSearch
+        ' 
+        txtSearch.Location = New Point(95, 42)
+        txtSearch.Name = "txtSearch"
+        txtSearch.RightToLeft = RightToLeft.No
+        txtSearch.Size = New Size(125, 27)
+        txtSearch.TabIndex = 0
+        ' 
+        ' OpenFileDialog
+        ' 
+        OpenFileDialog.FileName = "OpenFileDialog"
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 1055)
+        ClientSize = New Size(1902, 1033)
         Controls.Add(TabControl1)
         Name = "Form1"
         Text = "Form1"
@@ -537,7 +549,6 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents txtHiveCondition As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtHiveNumber As TextBox
     Friend WithEvents txtBroodPattern As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents chkSwarming As CheckBox
@@ -575,5 +586,7 @@ Partial Class Form1
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents btnSearch As Button
     Friend WithEvents txtWikiContent As RichTextBox
+    Friend WithEvents btnSettings As Button
+    Friend WithEvents txtHiveNumber As ComboBox
 
 End Class
