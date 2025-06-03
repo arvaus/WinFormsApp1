@@ -1,8 +1,7 @@
-﻿Imports System.Net.Http
-Imports Newtonsoft.Json.Linq
-Imports System.IO
-Imports System.Data.SqlClient
+﻿Imports System.IO
+Imports System.Net.Http
 Imports Microsoft.Data.SqlClient
+Imports Newtonsoft.Json.Linq
 
 Public Class FormWeather
     Dim connectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Austi\OneDrive\Documents\ProgramData.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"

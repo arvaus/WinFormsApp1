@@ -1,8 +1,6 @@
-﻿Imports System.Data.SqlClient
-Imports Newtonsoft.Json
-Imports System.Net.Http
-Imports System.Threading.Tasks
+﻿Imports System.Net.Http
 Imports Microsoft.Data.SqlClient
+Imports Newtonsoft.Json
 
 Public Class FormSettings
     ' Connection string to your SQL database

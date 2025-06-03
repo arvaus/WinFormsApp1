@@ -1,6 +1,5 @@
 ﻿Imports System.Net.Http
 Imports Newtonsoft.Json.Linq
-Imports System.Windows.Forms
 
 Public Module WeatherManager
 

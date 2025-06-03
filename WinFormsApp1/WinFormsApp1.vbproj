@@ -11,11 +11,8 @@
 
 	<ItemGroup>
 	  <Compile Remove="NewFolder1\**" />
-	  <Compile Remove="NewFolder\**" />
 	  <EmbeddedResource Remove="NewFolder1\**" />
-	  <EmbeddedResource Remove="NewFolder\**" />
 	  <None Remove="NewFolder1\**" />
-	  <None Remove="NewFolder\**" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -66,6 +63,14 @@
 			<Generator>MyApplicationCodeGenerator</Generator>
 			<LastGenOutput>Application.Designer.vb</LastGenOutput>
 		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="My Project\NewFolder1\" />
+	  <Folder Include="My Project\NewFolder2\" />
+	  <Folder Include="My Project\NewFolder\" />
+	  <Folder Include="NewFolder\" />
+	  <Folder Include="Phone App\" />
 	</ItemGroup>
 
 </Project>

@@ -25,6 +25,11 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         TabControl1 = New TabControl()
         TabPageForm = New TabPage()
+        btnWiki = New Button()
+        btnAddFile = New Button()
+        lvFiles = New ListView()
+        FileType = New ColumnHeader()
+        FilePath = New ColumnHeader()
         txtHiveNumber = New ComboBox()
         btnSettings = New Button()
         btnOpenWeather = New Button()
@@ -93,6 +98,9 @@ Partial Class Form1
         ' 
         TabPageForm.BackgroundImage = CType(resources.GetObject("TabPageForm.BackgroundImage"), Image)
         TabPageForm.BackgroundImageLayout = ImageLayout.Stretch
+        TabPageForm.Controls.Add(btnWiki)
+        TabPageForm.Controls.Add(btnAddFile)
+        TabPageForm.Controls.Add(lvFiles)
         TabPageForm.Controls.Add(txtHiveNumber)
         TabPageForm.Controls.Add(btnSettings)
         TabPageForm.Controls.Add(btnOpenWeather)
@@ -136,6 +144,42 @@ Partial Class Form1
         TabPageForm.TabIndex = 0
         TabPageForm.Text = "New Inspection"
         TabPageForm.UseVisualStyleBackColor = True
+        ' 
+        ' btnWiki
+        ' 
+        btnWiki.Location = New Point(834, 97)
+        btnWiki.Name = "btnWiki"
+        btnWiki.Size = New Size(94, 29)
+        btnWiki.TabIndex = 40
+        btnWiki.Text = "Wiki"
+        btnWiki.UseVisualStyleBackColor = True
+        ' 
+        ' btnAddFile
+        ' 
+        btnAddFile.Location = New Point(610, 710)
+        btnAddFile.Name = "btnAddFile"
+        btnAddFile.Size = New Size(94, 29)
+        btnAddFile.TabIndex = 39
+        btnAddFile.Text = "Add File"
+        btnAddFile.UseVisualStyleBackColor = True
+        ' 
+        ' lvFiles
+        ' 
+        lvFiles.Columns.AddRange(New ColumnHeader() {FileType, FilePath})
+        lvFiles.Location = New Point(610, 583)
+        lvFiles.Name = "lvFiles"
+        lvFiles.Size = New Size(151, 121)
+        lvFiles.TabIndex = 38
+        lvFiles.UseCompatibleStateImageBehavior = False
+        lvFiles.View = View.Details
+        ' 
+        ' FileType
+        ' 
+        FileType.Text = "File Type"
+        ' 
+        ' FilePath
+        ' 
+        FilePath.Text = "File Path"
         ' 
         ' txtHiveNumber
         ' 
@@ -588,5 +632,10 @@ Partial Class Form1
     Friend WithEvents txtWikiContent As RichTextBox
     Friend WithEvents btnSettings As Button
     Friend WithEvents txtHiveNumber As ComboBox
+    Friend WithEvents lvFiles As ListView
+    Friend WithEvents FileType As ColumnHeader
+    Friend WithEvents FilePath As ColumnHeader
+    Friend WithEvents btnAddFile As Button
+    Friend WithEvents btnWiki As Button
 
 End Class

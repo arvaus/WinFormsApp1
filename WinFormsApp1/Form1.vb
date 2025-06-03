@@ -1,13 +1,9 @@
 ﻿Imports Microsoft.Data.SqlClient
-Imports System.IO
-Imports System.Data
 
 Public Class Form1
     ' Connection string to the SQL Server instance on Austins-Laptop
 
     Dim connectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Austi\OneDrive\Documents\ProgramData.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"
-
-
 
 
 
@@ -185,4 +181,11 @@ Public Class Form1
     Private Sub cmbHiveFilter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbHiveFilter.SelectedIndexChanged
         ' Nothing needed here (for now)
     End Sub
+
+    Private Sub btnWiki_Click(sender As Object, e As EventArgs) Handles btnWiki.Click
+        Dim wikiForm As New WikiForm()
+        wikiForm.Show()
+
+    End Sub
+
 End Class
