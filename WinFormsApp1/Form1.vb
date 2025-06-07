@@ -2,23 +2,12 @@
 
 Public Class Form1
     ' Connection string to the SQL Server instance on Austins-Laptop
-
     Dim connectionString As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Austi\OneDrive\Documents\ProgramData.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True"
-
-
-
 
     Dim imagePath As String = ""
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Ensure the application folder exists if needed
-        ' Make sure BeeAppData folder exists
-        ' Commented out as it's not required if using SQL Server instead of LocalDB
-        ' If Not Directory.Exists(dbFolder) Then
-        '    Directory.CreateDirectory(dbFolder)
-        ' End If
         Me.WindowState = FormWindowState.Maximized
-
         LoadHiveNumbers()
     End Sub
 
@@ -41,11 +30,15 @@ Public Class Form1
             conn.Open()
 
             Dim query = "INSERT INTO Inspections 
-            (InspectionDate, HiveNumber, HiveCondition, BroodPattern, Swarming, QueenStatus, BeePopulation, DronePopulation, 
-             Pests, MiteCount, Treatment, FeedType, FeedAmount, Weather, Temperature, Notes, PhotoPath) 
-            VALUES 
-            (@Date, @HiveNumber, @Condition, @Brood, @Swarming, @Queen, @Bees, @Drones, 
-             @Pests, @Mites, @Treatment, @FeedType, @FeedAmt, @Weather, @Temp, @Notes, @Photo)"
+                (InspectionDate, HiveNumber, HiveCondition, BroodPattern, Swarming, QueenStatus, BeePopulation, DronePopulation, 
+                 Pests, MiteCount, Treatment, FeedType, FeedAmount, Weather, Temperature, Notes, PhotoPath,
+                 Frame1Content, Frame2Content, Frame3Content, Frame4Content, Frame5Content, 
+                 Frame6Content, Frame7Content, Frame8Content, Frame9Content, Frame10Content)
+                VALUES 
+                (@Date, @HiveNumber, @Condition, @Brood, @Swarming, @Queen, @Bees, @Drones, 
+                 @Pests, @Mites, @Treatment, @FeedType, @FeedAmt, @Weather, @Temp, @Notes, @Photo,
+                 @Frame1, @Frame2, @Frame3, @Frame4, @Frame5, 
+                 @Frame6, @Frame7, @Frame8, @Frame9, @Frame10)"
 
             Dim cmd As New SqlCommand(query, conn)
             cmd.Parameters.AddWithValue("@Date", dtpDate.Value)
@@ -66,6 +59,18 @@ Public Class Form1
             cmd.Parameters.AddWithValue("@Notes", txtNotes.Text)
             cmd.Parameters.AddWithValue("@Photo", imagePath)
 
+            ' Frame dropdowns
+            cmd.Parameters.AddWithValue("@Frame1", cboFrame1.Text)
+            cmd.Parameters.AddWithValue("@Frame2", cboFrame2.Text)
+            cmd.Parameters.AddWithValue("@Frame3", cboFrame3.Text)
+            cmd.Parameters.AddWithValue("@Frame4", cboFrame4.Text)
+            cmd.Parameters.AddWithValue("@Frame5", cboFrame5.Text)
+            cmd.Parameters.AddWithValue("@Frame6", cboFrame6.Text)
+            cmd.Parameters.AddWithValue("@Frame7", cboFrame7.Text)
+            cmd.Parameters.AddWithValue("@Frame8", cboFrame8.Text)
+            cmd.Parameters.AddWithValue("@Frame9", cboFrame9.Text)
+            cmd.Parameters.AddWithValue("@Frame10", cboFrame10.Text)
+
             cmd.ExecuteNonQuery()
         End Using
 
@@ -79,7 +84,7 @@ Public Class Form1
             Dim query As String = "SELECT * FROM Inspections ORDER BY InspectionDate DESC"
             Dim adapter As New SqlDataAdapter(query, conn)
             Dim table As New DataTable()
-            adapter.Fill(dataTable:=table)
+            adapter.Fill(table)
             dgvRecords.DataSource = table
         End Using
     End Sub
@@ -102,6 +107,18 @@ Public Class Form1
         txtNotes.Clear()
         picPreview.Image = Nothing
         imagePath = ""
+
+        ' Clear frame combo boxes
+        cboFrame1.SelectedIndex = -1
+        cboFrame2.SelectedIndex = -1
+        cboFrame3.SelectedIndex = -1
+        cboFrame4.SelectedIndex = -1
+        cboFrame5.SelectedIndex = -1
+        cboFrame6.SelectedIndex = -1
+        cboFrame7.SelectedIndex = -1
+        cboFrame8.SelectedIndex = -1
+        cboFrame9.SelectedIndex = -1
+        cboFrame10.SelectedIndex = -1
     End Sub
 
     Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
@@ -125,7 +142,6 @@ Public Class Form1
     Private Sub LoadHiveNumbers()
         cmbHiveFilter.Items.Clear()
         txtHiveNumber.Items.Clear()
-        MessageBox.Show("Connection string: " & connectionString)
 
         Using conn As New SqlConnection(connectionString)
             conn.Open()
@@ -185,7 +201,24 @@ Public Class Form1
     Private Sub btnWiki_Click(sender As Object, e As EventArgs) Handles btnWiki.Click
         Dim wikiForm As New WikiForm()
         wikiForm.Show()
-
     End Sub
 
+    Private Sub TabPageForm_Click(sender As Object, e As EventArgs) Handles TabPageForm.Click
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    End Sub
+
+    Private Sub Label15_Click(sender As Object, e As EventArgs)
+    End Sub
+
+    Private Sub dtpDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpDate.ValueChanged
+    End Sub
+
+    Private Sub cboFrame4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboFrame4.SelectedIndexChanged
+    End Sub
+
+    Private Sub TabPageRecords_Click(sender As Object, e As EventArgs) Handles TabPageRecords.Click
+
+    End Sub
 End Class

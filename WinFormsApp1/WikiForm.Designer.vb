@@ -37,6 +37,7 @@ Partial Class WikiForm
         ' 
         ' lstPages
         ' 
+        lstPages.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         lstPages.FormattingEnabled = True
         lstPages.Location = New Point(12, 26)
         lstPages.Name = "lstPages"
@@ -53,6 +54,7 @@ Partial Class WikiForm
         ' 
         ' txtPageTitle
         ' 
+        txtPageTitle.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtPageTitle.Location = New Point(427, 50)
         txtPageTitle.Name = "txtPageTitle"
         txtPageTitle.Size = New Size(397, 27)
@@ -60,6 +62,7 @@ Partial Class WikiForm
         ' 
         ' btnLoad
         ' 
+        btnLoad.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         btnLoad.Location = New Point(1026, 49)
         btnLoad.Name = "btnLoad"
         btnLoad.Size = New Size(94, 29)
@@ -69,20 +72,21 @@ Partial Class WikiForm
         ' 
         ' btnSave
         ' 
+        btnSave.Image = CType(resources.GetObject("btnSave.Image"), Image)
         btnSave.Location = New Point(1116, 642)
         btnSave.Name = "btnSave"
-        btnSave.Size = New Size(94, 29)
+        btnSave.Size = New Size(47, 51)
         btnSave.TabIndex = 4
-        btnSave.Text = "Save Page"
         btnSave.UseVisualStyleBackColor = True
         ' 
         ' btnNewPage
         ' 
+        btnNewPage.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnNewPage.Image = CType(resources.GetObject("btnNewPage.Image"), Image)
         btnNewPage.Location = New Point(399, 642)
         btnNewPage.Name = "btnNewPage"
-        btnNewPage.Size = New Size(94, 29)
+        btnNewPage.Size = New Size(48, 51)
         btnNewPage.TabIndex = 5
-        btnNewPage.Text = "New Page"
         btnNewPage.UseVisualStyleBackColor = True
         ' 
         ' btnBold
@@ -136,6 +140,7 @@ Partial Class WikiForm
         Controls.Add(txtPageTitle)
         Controls.Add(rtbContent)
         Controls.Add(lstPages)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "WikiForm"
         Text = "WikiForm"
         ResumeLayout(False)

@@ -22,6 +22,7 @@ Partial Class FormWeather
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormWeather))
         lblLatitude = New Label()
         lblAdditionalWeather = New Label()
         lblTemperature = New Label()
@@ -39,6 +40,7 @@ Partial Class FormWeather
         ' 
         ' lblLatitude
         ' 
+        lblLatitude.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         lblLatitude.AutoSize = True
         lblLatitude.Location = New Point(12, 32)
         lblLatitude.Name = "lblLatitude"
@@ -48,6 +50,7 @@ Partial Class FormWeather
         ' 
         ' lblAdditionalWeather
         ' 
+        lblAdditionalWeather.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         lblAdditionalWeather.AutoSize = True
         lblAdditionalWeather.Location = New Point(267, 402)
         lblAdditionalWeather.Name = "lblAdditionalWeather"
@@ -57,6 +60,7 @@ Partial Class FormWeather
         ' 
         ' lblTemperature
         ' 
+        lblTemperature.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         lblTemperature.AutoSize = True
         lblTemperature.Location = New Point(123, 368)
         lblTemperature.Name = "lblTemperature"
@@ -66,6 +70,7 @@ Partial Class FormWeather
         ' 
         ' lblWeatherInfo
         ' 
+        lblWeatherInfo.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         lblWeatherInfo.AutoSize = True
         lblWeatherInfo.Location = New Point(267, 368)
         lblWeatherInfo.Name = "lblWeatherInfo"
@@ -75,6 +80,7 @@ Partial Class FormWeather
         ' 
         ' lblLongitude
         ' 
+        lblLongitude.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         lblLongitude.AutoSize = True
         lblLongitude.Location = New Point(187, 32)
         lblLongitude.Name = "lblLongitude"
@@ -84,6 +90,7 @@ Partial Class FormWeather
         ' 
         ' btnClose
         ' 
+        btnClose.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         btnClose.Location = New Point(12, 651)
         btnClose.Name = "btnClose"
         btnClose.Size = New Size(94, 29)
@@ -93,6 +100,7 @@ Partial Class FormWeather
         ' 
         ' txtWeatherDetails
         ' 
+        txtWeatherDetails.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         txtWeatherDetails.Location = New Point(91, 433)
         txtWeatherDetails.Name = "txtWeatherDetails"
         txtWeatherDetails.Size = New Size(566, 170)
@@ -101,6 +109,7 @@ Partial Class FormWeather
         ' 
         ' progressBar
         ' 
+        progressBar.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         progressBar.Location = New Point(194, 609)
         progressBar.Name = "progressBar"
         progressBar.Size = New Size(405, 29)
@@ -109,6 +118,7 @@ Partial Class FormWeather
         ' 
         ' picWeather
         ' 
+        picWeather.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         picWeather.Location = New Point(30, 88)
         picWeather.Name = "picWeather"
         picWeather.Size = New Size(627, 277)
@@ -117,6 +127,7 @@ Partial Class FormWeather
         ' 
         ' lblWeather
         ' 
+        lblWeather.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         lblWeather.AutoSize = True
         lblWeather.Location = New Point(533, 368)
         lblWeather.Name = "lblWeather"
@@ -126,6 +137,7 @@ Partial Class FormWeather
         ' 
         ' Label1
         ' 
+        Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Label1.AutoSize = True
         Label1.Location = New Point(12, 9)
         Label1.Name = "Label1"
@@ -135,6 +147,7 @@ Partial Class FormWeather
         ' 
         ' cmbApiarySelection
         ' 
+        cmbApiarySelection.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         cmbApiarySelection.FormattingEnabled = True
         cmbApiarySelection.Location = New Point(416, 32)
         cmbApiarySelection.Name = "cmbApiarySelection"
@@ -158,6 +171,7 @@ Partial Class FormWeather
         Controls.Add(lblTemperature)
         Controls.Add(lblAdditionalWeather)
         Controls.Add(lblLatitude)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "FormWeather"
         Text = "FormWeather"
         CType(picWeather, ComponentModel.ISupportInitialize).EndInit()

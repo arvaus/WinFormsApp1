@@ -66,6 +66,28 @@ Partial Class Form1
         Label2 = New Label()
         Label1 = New Label()
         dtpDate = New DateTimePicker()
+        Panel4 = New Panel()
+        Panel5 = New Panel()
+        cboFrame2 = New ComboBox()
+        Panel6 = New Panel()
+        cboFrame3 = New ComboBox()
+        Panel7 = New Panel()
+        cboFrame4 = New ComboBox()
+        Panel8 = New Panel()
+        cboFrame5 = New ComboBox()
+        Panel9 = New Panel()
+        cboFrame6 = New ComboBox()
+        Panel10 = New Panel()
+        cboFrame7 = New ComboBox()
+        Panel11 = New Panel()
+        cboFrame8 = New ComboBox()
+        Panel12 = New Panel()
+        cboFrame9 = New ComboBox()
+        Panel13 = New Panel()
+        cboFrame10 = New ComboBox()
+        Panel2 = New Panel()
+        Panel3 = New Panel()
+        cboFrame1 = New ComboBox()
         TabPageRecords = New TabPage()
         btnFilter = New Button()
         cmbHiveFilter = New ComboBox()
@@ -75,12 +97,26 @@ Partial Class Form1
         btnSearch = New Button()
         txtSearch = New TextBox()
         OpenFileDialog = New OpenFileDialog()
+        Panel1 = New Panel()
         TabControl1.SuspendLayout()
         TabPageForm.SuspendLayout()
         CType(picPreview, ComponentModel.ISupportInitialize).BeginInit()
+        Panel4.SuspendLayout()
+        Panel5.SuspendLayout()
+        Panel6.SuspendLayout()
+        Panel7.SuspendLayout()
+        Panel8.SuspendLayout()
+        Panel9.SuspendLayout()
+        Panel10.SuspendLayout()
+        Panel11.SuspendLayout()
+        Panel12.SuspendLayout()
+        Panel13.SuspendLayout()
+        Panel2.SuspendLayout()
+        Panel3.SuspendLayout()
         TabPageRecords.SuspendLayout()
         CType(dgvRecords, ComponentModel.ISupportInitialize).BeginInit()
         TabPageBeePlants.SuspendLayout()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' TabControl1
@@ -88,14 +124,15 @@ Partial Class Form1
         TabControl1.Controls.Add(TabPageForm)
         TabControl1.Controls.Add(TabPageRecords)
         TabControl1.Controls.Add(TabPageBeePlants)
-        TabControl1.Location = New Point(1, -5)
+        TabControl1.Location = New Point(86, 3)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(1059, 1060)
+        TabControl1.Size = New Size(1023, 1997)
         TabControl1.TabIndex = 0
         ' 
         ' TabPageForm
         ' 
+        TabPageForm.AutoScroll = True
         TabPageForm.BackgroundImage = CType(resources.GetObject("TabPageForm.BackgroundImage"), Image)
         TabPageForm.BackgroundImageLayout = ImageLayout.Stretch
         TabPageForm.Controls.Add(btnWiki)
@@ -137,26 +174,27 @@ Partial Class Form1
         TabPageForm.Controls.Add(Label2)
         TabPageForm.Controls.Add(Label1)
         TabPageForm.Controls.Add(dtpDate)
+        TabPageForm.Controls.Add(Panel4)
         TabPageForm.Location = New Point(4, 29)
         TabPageForm.Name = "TabPageForm"
         TabPageForm.Padding = New Padding(3)
-        TabPageForm.Size = New Size(1051, 1027)
+        TabPageForm.Size = New Size(1015, 1964)
         TabPageForm.TabIndex = 0
         TabPageForm.Text = "New Inspection"
         TabPageForm.UseVisualStyleBackColor = True
         ' 
         ' btnWiki
         ' 
+        btnWiki.Image = CType(resources.GetObject("btnWiki.Image"), Image)
         btnWiki.Location = New Point(834, 97)
         btnWiki.Name = "btnWiki"
-        btnWiki.Size = New Size(94, 29)
+        btnWiki.Size = New Size(103, 31)
         btnWiki.TabIndex = 40
-        btnWiki.Text = "Wiki"
         btnWiki.UseVisualStyleBackColor = True
         ' 
         ' btnAddFile
         ' 
-        btnAddFile.Location = New Point(610, 710)
+        btnAddFile.Location = New Point(622, 1055)
         btnAddFile.Name = "btnAddFile"
         btnAddFile.Size = New Size(94, 29)
         btnAddFile.TabIndex = 39
@@ -166,7 +204,7 @@ Partial Class Form1
         ' lvFiles
         ' 
         lvFiles.Columns.AddRange(New ColumnHeader() {FileType, FilePath})
-        lvFiles.Location = New Point(610, 583)
+        lvFiles.Location = New Point(622, 928)
         lvFiles.Name = "lvFiles"
         lvFiles.Size = New Size(151, 121)
         lvFiles.TabIndex = 38
@@ -191,11 +229,11 @@ Partial Class Form1
         ' 
         ' btnSettings
         ' 
-        btnSettings.Location = New Point(525, 100)
+        btnSettings.Image = CType(resources.GetObject("btnSettings.Image"), Image)
+        btnSettings.Location = New Point(492, 104)
         btnSettings.Name = "btnSettings"
-        btnSettings.Size = New Size(101, 29)
+        btnSettings.Size = New Size(53, 49)
         btnSettings.TabIndex = 36
-        btnSettings.Text = "Settings"
         btnSettings.UseVisualStyleBackColor = True
         ' 
         ' btnOpenWeather
@@ -242,17 +280,17 @@ Partial Class Form1
         ' btnSave
         ' 
         btnSave.BackColor = Color.AntiqueWhite
-        btnSave.Location = New Point(235, 961)
+        btnSave.Image = CType(resources.GetObject("btnSave.Image"), Image)
+        btnSave.Location = New Point(264, 1306)
         btnSave.Name = "btnSave"
-        btnSave.Size = New Size(168, 29)
+        btnSave.Size = New Size(60, 49)
         btnSave.TabIndex = 30
-        btnSave.Text = "Save Inspection"
         btnSave.UseVisualStyleBackColor = False
         ' 
         ' Label12
         ' 
         Label12.AutoSize = True
-        Label12.Location = New Point(58, 835)
+        Label12.Location = New Point(70, 1180)
         Label12.Name = "Label12"
         Label12.Size = New Size(48, 20)
         Label12.TabIndex = 29
@@ -260,7 +298,7 @@ Partial Class Form1
         ' 
         ' txtNotes
         ' 
-        txtNotes.Location = New Point(112, 835)
+        txtNotes.Location = New Point(124, 1180)
         txtNotes.Multiline = True
         txtNotes.Name = "txtNotes"
         txtNotes.Size = New Size(421, 120)
@@ -269,7 +307,7 @@ Partial Class Form1
         ' btnUploadPhoto
         ' 
         btnUploadPhoto.BackColor = Color.LightSkyBlue
-        btnUploadPhoto.Location = New Point(235, 801)
+        btnUploadPhoto.Location = New Point(247, 1146)
         btnUploadPhoto.Name = "btnUploadPhoto"
         btnUploadPhoto.Size = New Size(129, 29)
         btnUploadPhoto.TabIndex = 27
@@ -278,7 +316,7 @@ Partial Class Form1
         ' 
         ' picPreview
         ' 
-        picPreview.Location = New Point(112, 592)
+        picPreview.Location = New Point(124, 937)
         picPreview.Name = "picPreview"
         picPreview.Size = New Size(373, 203)
         picPreview.SizeMode = PictureBoxSizeMode.Zoom
@@ -481,6 +519,225 @@ Partial Class Form1
         dtpDate.Size = New Size(250, 27)
         dtpDate.TabIndex = 0
         ' 
+        ' Panel4
+        ' 
+        Panel4.BackColor = Color.WhiteSmoke
+        Panel4.BorderStyle = BorderStyle.FixedSingle
+        Panel4.Controls.Add(Panel5)
+        Panel4.Controls.Add(Panel6)
+        Panel4.Controls.Add(Panel7)
+        Panel4.Controls.Add(Panel8)
+        Panel4.Controls.Add(Panel9)
+        Panel4.Controls.Add(Panel10)
+        Panel4.Controls.Add(Panel11)
+        Panel4.Controls.Add(Panel12)
+        Panel4.Controls.Add(Panel13)
+        Panel4.Controls.Add(Panel2)
+        Panel4.Location = New Point(62, 628)
+        Panel4.Name = "Panel4"
+        Panel4.Size = New Size(672, 294)
+        Panel4.TabIndex = 43
+        ' 
+        ' Panel5
+        ' 
+        Panel5.BackColor = Color.Gainsboro
+        Panel5.BorderStyle = BorderStyle.FixedSingle
+        Panel5.Controls.Add(cboFrame2)
+        Panel5.Location = New Point(76, 15)
+        Panel5.Name = "Panel5"
+        Panel5.Size = New Size(39, 262)
+        Panel5.TabIndex = 43
+        ' 
+        ' cboFrame2
+        ' 
+        cboFrame2.FormattingEnabled = True
+        cboFrame2.Items.AddRange(New Object() {"Empty", "Honey", "Brood", "Pollen", "Queen", "Drone", "Mixed"})
+        cboFrame2.Location = New Point(7, 229)
+        cboFrame2.Name = "cboFrame2"
+        cboFrame2.Size = New Size(23, 28)
+        cboFrame2.TabIndex = 45
+        ' 
+        ' Panel6
+        ' 
+        Panel6.BackColor = Color.Gainsboro
+        Panel6.BorderStyle = BorderStyle.FixedSingle
+        Panel6.Controls.Add(cboFrame3)
+        Panel6.Location = New Point(143, 15)
+        Panel6.Name = "Panel6"
+        Panel6.Size = New Size(39, 262)
+        Panel6.TabIndex = 44
+        ' 
+        ' cboFrame3
+        ' 
+        cboFrame3.FormattingEnabled = True
+        cboFrame3.Items.AddRange(New Object() {"Empty", "Honey", "Brood", "Pollen", "Queen", "Drone", "Mixed"})
+        cboFrame3.Location = New Point(8, 229)
+        cboFrame3.Name = "cboFrame3"
+        cboFrame3.Size = New Size(23, 28)
+        cboFrame3.TabIndex = 45
+        ' 
+        ' Panel7
+        ' 
+        Panel7.BackColor = Color.Gainsboro
+        Panel7.BorderStyle = BorderStyle.FixedSingle
+        Panel7.Controls.Add(cboFrame4)
+        Panel7.Location = New Point(207, 15)
+        Panel7.Name = "Panel7"
+        Panel7.Size = New Size(39, 262)
+        Panel7.TabIndex = 44
+        ' 
+        ' cboFrame4
+        ' 
+        cboFrame4.FormattingEnabled = True
+        cboFrame4.Items.AddRange(New Object() {"Empty", "Honey", "Brood", "Pollen", "Queen", "Drone", "Mixed"})
+        cboFrame4.Location = New Point(7, 229)
+        cboFrame4.Name = "cboFrame4"
+        cboFrame4.Size = New Size(23, 28)
+        cboFrame4.TabIndex = 46
+        ' 
+        ' Panel8
+        ' 
+        Panel8.BackColor = Color.Gainsboro
+        Panel8.BorderStyle = BorderStyle.FixedSingle
+        Panel8.Controls.Add(cboFrame5)
+        Panel8.Location = New Point(275, 15)
+        Panel8.Name = "Panel8"
+        Panel8.Size = New Size(39, 262)
+        Panel8.TabIndex = 44
+        ' 
+        ' cboFrame5
+        ' 
+        cboFrame5.FormattingEnabled = True
+        cboFrame5.Items.AddRange(New Object() {"Empty", "Honey", "Brood", "Pollen", "Queen", "Drone", "Mixed"})
+        cboFrame5.Location = New Point(8, 226)
+        cboFrame5.Name = "cboFrame5"
+        cboFrame5.Size = New Size(23, 28)
+        cboFrame5.TabIndex = 46
+        ' 
+        ' Panel9
+        ' 
+        Panel9.BackColor = Color.Gainsboro
+        Panel9.BorderStyle = BorderStyle.FixedSingle
+        Panel9.Controls.Add(cboFrame6)
+        Panel9.Location = New Point(339, 15)
+        Panel9.Name = "Panel9"
+        Panel9.Size = New Size(39, 262)
+        Panel9.TabIndex = 44
+        ' 
+        ' cboFrame6
+        ' 
+        cboFrame6.FormattingEnabled = True
+        cboFrame6.Items.AddRange(New Object() {"Empty", "Honey", "Brood", "Pollen", "Queen", "Drone", "Mixed"})
+        cboFrame6.Location = New Point(7, 227)
+        cboFrame6.Name = "cboFrame6"
+        cboFrame6.Size = New Size(23, 28)
+        cboFrame6.TabIndex = 47
+        ' 
+        ' Panel10
+        ' 
+        Panel10.BackColor = Color.Gainsboro
+        Panel10.BorderStyle = BorderStyle.FixedSingle
+        Panel10.Controls.Add(cboFrame7)
+        Panel10.Location = New Point(407, 15)
+        Panel10.Name = "Panel10"
+        Panel10.Size = New Size(39, 262)
+        Panel10.TabIndex = 44
+        ' 
+        ' cboFrame7
+        ' 
+        cboFrame7.FormattingEnabled = True
+        cboFrame7.Items.AddRange(New Object() {"Empty", "Honey", "Brood", "Pollen", "Queen", "Drone", "Mixed"})
+        cboFrame7.Location = New Point(7, 226)
+        cboFrame7.Name = "cboFrame7"
+        cboFrame7.Size = New Size(23, 28)
+        cboFrame7.TabIndex = 48
+        ' 
+        ' Panel11
+        ' 
+        Panel11.BackColor = Color.Gainsboro
+        Panel11.BorderStyle = BorderStyle.FixedSingle
+        Panel11.Controls.Add(cboFrame8)
+        Panel11.Location = New Point(472, 15)
+        Panel11.Name = "Panel11"
+        Panel11.Size = New Size(39, 262)
+        Panel11.TabIndex = 44
+        ' 
+        ' cboFrame8
+        ' 
+        cboFrame8.FormattingEnabled = True
+        cboFrame8.Items.AddRange(New Object() {"Empty", "Honey", "Brood", "Pollen", "Queen", "Drone", "Mixed"})
+        cboFrame8.Location = New Point(9, 226)
+        cboFrame8.Name = "cboFrame8"
+        cboFrame8.Size = New Size(23, 28)
+        cboFrame8.TabIndex = 49
+        ' 
+        ' Panel12
+        ' 
+        Panel12.BackColor = Color.Gainsboro
+        Panel12.BorderStyle = BorderStyle.FixedSingle
+        Panel12.Controls.Add(cboFrame9)
+        Panel12.Location = New Point(538, 15)
+        Panel12.Name = "Panel12"
+        Panel12.Size = New Size(39, 262)
+        Panel12.TabIndex = 44
+        ' 
+        ' cboFrame9
+        ' 
+        cboFrame9.FormattingEnabled = True
+        cboFrame9.Items.AddRange(New Object() {"Empty", "Honey", "Brood", "Pollen", "Queen", "Drone", "Mixed"})
+        cboFrame9.Location = New Point(8, 227)
+        cboFrame9.Name = "cboFrame9"
+        cboFrame9.Size = New Size(23, 28)
+        cboFrame9.TabIndex = 50
+        ' 
+        ' Panel13
+        ' 
+        Panel13.BackColor = Color.Gainsboro
+        Panel13.BorderStyle = BorderStyle.FixedSingle
+        Panel13.Controls.Add(cboFrame10)
+        Panel13.Location = New Point(608, 15)
+        Panel13.Name = "Panel13"
+        Panel13.Size = New Size(39, 262)
+        Panel13.TabIndex = 44
+        ' 
+        ' cboFrame10
+        ' 
+        cboFrame10.FormattingEnabled = True
+        cboFrame10.Items.AddRange(New Object() {"Empty", "Honey", "Brood", "Pollen", "Queen", "Drone", "Mixed"})
+        cboFrame10.Location = New Point(8, 228)
+        cboFrame10.Name = "cboFrame10"
+        cboFrame10.Size = New Size(23, 28)
+        cboFrame10.TabIndex = 51
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BackColor = Color.Gainsboro
+        Panel2.BorderStyle = BorderStyle.FixedSingle
+        Panel2.Controls.Add(Panel3)
+        Panel2.Location = New Point(14, 15)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(39, 262)
+        Panel2.TabIndex = 41
+        ' 
+        ' Panel3
+        ' 
+        Panel3.BackColor = Color.Gainsboro
+        Panel3.BorderStyle = BorderStyle.FixedSingle
+        Panel3.Controls.Add(cboFrame1)
+        Panel3.Location = New Point(-1, -1)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(39, 262)
+        Panel3.TabIndex = 42
+        ' 
+        ' cboFrame1
+        ' 
+        cboFrame1.FormattingEnabled = True
+        cboFrame1.Items.AddRange(New Object() {"Empty", "Honey", "Brood", "Pollen", "Queen", "Drone", "Mixed"})
+        cboFrame1.Location = New Point(6, 229)
+        cboFrame1.Name = "cboFrame1"
+        cboFrame1.Size = New Size(23, 28)
+        cboFrame1.TabIndex = 44
+        ' 
         ' TabPageRecords
         ' 
         TabPageRecords.BackgroundImage = CType(resources.GetObject("TabPageRecords.BackgroundImage"), Image)
@@ -490,7 +747,7 @@ Partial Class Form1
         TabPageRecords.Location = New Point(4, 29)
         TabPageRecords.Name = "TabPageRecords"
         TabPageRecords.Padding = New Padding(3)
-        TabPageRecords.Size = New Size(1051, 1027)
+        TabPageRecords.Size = New Size(1015, 1964)
         TabPageRecords.TabIndex = 1
         TabPageRecords.Text = "Inspection Records"
         TabPageRecords.UseVisualStyleBackColor = True
@@ -517,7 +774,7 @@ Partial Class Form1
         dgvRecords.AllowUserToAddRows = False
         dgvRecords.AllowUserToDeleteRows = False
         dgvRecords.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvRecords.Location = New Point(-4, 42)
+        dgvRecords.Location = New Point(107, 42)
         dgvRecords.Name = "dgvRecords"
         dgvRecords.ReadOnly = True
         dgvRecords.RowHeadersWidth = 51
@@ -531,7 +788,7 @@ Partial Class Form1
         TabPageBeePlants.Controls.Add(txtSearch)
         TabPageBeePlants.Location = New Point(4, 29)
         TabPageBeePlants.Name = "TabPageBeePlants"
-        TabPageBeePlants.Size = New Size(1051, 1027)
+        TabPageBeePlants.Size = New Size(1015, 1964)
         TabPageBeePlants.TabIndex = 2
         TabPageBeePlants.Text = "Wiki"
         TabPageBeePlants.UseVisualStyleBackColor = True
@@ -566,22 +823,47 @@ Partial Class Form1
         ' 
         OpenFileDialog.FileName = "OpenFileDialog"
         ' 
+        ' Panel1
+        ' 
+        Panel1.AutoScroll = True
+        Panel1.Controls.Add(TabControl1)
+        Panel1.Location = New Point(-64, 1053)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(3058, 1560)
+        Panel1.TabIndex = 1
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1902, 1033)
-        Controls.Add(TabControl1)
+        AutoScroll = True
+        ClientSize = New Size(1902, 1055)
+        Controls.Add(Panel1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "Form1"
         Text = "Form1"
+        WindowState = FormWindowState.Maximized
         TabControl1.ResumeLayout(False)
         TabPageForm.ResumeLayout(False)
         TabPageForm.PerformLayout()
         CType(picPreview, ComponentModel.ISupportInitialize).EndInit()
+        Panel4.ResumeLayout(False)
+        Panel5.ResumeLayout(False)
+        Panel6.ResumeLayout(False)
+        Panel7.ResumeLayout(False)
+        Panel8.ResumeLayout(False)
+        Panel9.ResumeLayout(False)
+        Panel10.ResumeLayout(False)
+        Panel11.ResumeLayout(False)
+        Panel12.ResumeLayout(False)
+        Panel13.ResumeLayout(False)
+        Panel2.ResumeLayout(False)
+        Panel3.ResumeLayout(False)
         TabPageRecords.ResumeLayout(False)
         CType(dgvRecords, ComponentModel.ISupportInitialize).EndInit()
         TabPageBeePlants.ResumeLayout(False)
         TabPageBeePlants.PerformLayout()
+        Panel1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
@@ -637,5 +919,28 @@ Partial Class Form1
     Friend WithEvents FilePath As ColumnHeader
     Friend WithEvents btnAddFile As Button
     Friend WithEvents btnWiki As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents cboFrame2 As ComboBox
+    Friend WithEvents cboFrame3 As ComboBox
+    Friend WithEvents cboFrame4 As ComboBox
+    Friend WithEvents cboFrame5 As ComboBox
+    Friend WithEvents cboFrame6 As ComboBox
+    Friend WithEvents cboFrame7 As ComboBox
+    Friend WithEvents cboFrame8 As ComboBox
+    Friend WithEvents cboFrame9 As ComboBox
+    Friend WithEvents cboFrame10 As ComboBox
+    Friend WithEvents cboFrame1 As ComboBox
 
 End Class

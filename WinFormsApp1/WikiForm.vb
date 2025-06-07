@@ -118,5 +118,13 @@
             LoadPageByTitle(lstPages.SelectedItem.ToString())
         End If
     End Sub
+
+    Private Sub ToolStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs)
+
+    End Sub
+
+    Private Sub rtbContent_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
 
